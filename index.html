@@ -102,10 +102,15 @@
   .aiblock .asub{color:var(--muted);margin-top:10px;font-size:15px;max-width:74ch}
   .ai-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:14px;margin-top:26px}
   .ai-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column}
+  /* цвет номеров шагов = цвет категории */
+  .ai-card.nasmotr{--c-bg:#eef0ff;--c-fg:#4b4bc4}
+  .ai-card.take{--c-bg:#e7f6ee;--c-fg:#1f7a4d}
+  .ai-card.tool{--c-bg:#fdeee7;--c-fg:#b5592a}
+  .ai-card.ref{--c-bg:#f0eefb;--c-fg:#6a4bbf}
   .ai-card .type{align-self:flex-start;margin-bottom:16px}
   .ai-card ol{list-style:none;counter-reset:step;display:flex;flex-direction:column;gap:13px}
   .ai-card li{counter-increment:step;position:relative;padding-left:34px;font-size:13.5px;color:var(--muted);line-height:1.46}
-  .ai-card li::before{content:counter(step);position:absolute;left:0;top:1px;width:23px;height:23px;border-radius:7px;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:12px;display:grid;place-items:center}
+  .ai-card li::before{content:counter(step);position:absolute;left:0;top:1px;width:23px;height:23px;border-radius:7px;background:var(--c-bg);color:var(--c-fg);font-weight:700;font-size:12px;display:grid;place-items:center}
   .ai-card li b{color:var(--ink);font-weight:600}
 
   /* ── How-to ── */
@@ -178,7 +183,7 @@
     <h2>🤖 Как применять ресурсы в разработке с ИИ</h2>
     <p class="asub">Ресурсы выше — это не только насмотренность. Каждый тип можно подключить к работе с ИИ-ассистентом вроде Claude Code. Вот пошаговый чек-лист по каждой категории.</p>
     <div class="ai-grid">
-      <div class="ai-card">
+      <div class="ai-card nasmotr">
         <span class="type nasmotr">Референсы</span>
         <ol>
           <li>Найди на Mobbin или Behance экран, близкий к задаче, и сделай <b>скриншот</b>.</li>
@@ -187,7 +192,7 @@
           <li>Попроси сверстать экран на твоём стеке (например React + Tailwind) и правь по блокам.</li>
         </ol>
       </div>
-      <div class="ai-card">
+      <div class="ai-card take">
         <span class="type take">Можно использовать</span>
         <ol>
           <li>Выбери готовый компонент или ассет — например компонент с shadcn/ui или иконки Lucide.</li>
@@ -196,7 +201,7 @@
           <li>Уточни, куда встроить и какие пропсы и стили подогнать под макет.</li>
         </ol>
       </div>
-      <div class="ai-card">
+      <div class="ai-card tool">
         <span class="type tool">Сервис</span>
         <ol>
           <li>Подбери параметры: палитру в Coolors, шрифтовую пару, кривую в Cubic-bezier.</li>
@@ -205,7 +210,7 @@
           <li>Попроси применить токены по компонентам, чтобы стиль был единым.</li>
         </ol>
       </div>
-      <div class="ai-card">
+      <div class="ai-card ref">
         <span class="type ref">Гайды</span>
         <ol>
           <li>Найди подходящее правило или чек-лист — например чек-лист по формам на Checklist Design.</li>
