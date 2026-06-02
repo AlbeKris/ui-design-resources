@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Насмотренность · Ресурсы для дизайна экранов, сайтов & UI</title>
+<meta name="description" content="Карта из 80 ресурсов для дизайна интерфейсов: насмотренность, готовые компоненты, анимации, цвет, шрифты и инструменты. Все ссылки кликабельны.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4f4f6; --surface:#fff; --line:#e8e8ee; --ink:#15151b; --muted:#65656f; --faint:#9a9aa3;
+    --accent:#5b5bd6; --radius:18px; --maxw:1200px;
+    --shadow:0 1px 2px rgba(20,20,30,.04),0 10px 30px rgba(20,20,30,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:120px}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  header.hero{padding:60px 0 34px}
+  .eyebrow{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  h1{font-size:clamp(36px,5.5vw,58px);font-weight:900;letter-spacing:-.03em;margin:14px 0;max-width:16ch;line-height:1.05}
+  .lede{font-size:18px;color:var(--muted);max-width:60ch}
+  .stats{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
+  .pill{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 18px;box-shadow:var(--shadow)}
+  .pill .num{font-size:24px;font-weight:800;letter-spacing:-.02em}
+  .pill .lbl{font-size:12.5px;color:var(--muted)}
+
+  .controls{position:sticky;top:0;z-index:50;background:rgba(244,244,246,.85);backdrop-filter:blur(12px);padding:14px 0;border-bottom:1px solid var(--line)}
+  .controls-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .search{flex:1;min-width:220px;position:relative}
+  .search input{width:100%;padding:12px 14px 12px 42px;font-size:15px;font-family:inherit;border:1px solid var(--line);border-radius:13px;background:var(--surface);color:var(--ink);outline:none;transition:box-shadow .15s,border-color .15s}
+  .search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(91,91,214,.12)}
+  .search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--faint)}
+  .filters{display:flex;gap:7px;flex-wrap:wrap}
+  .chip{font-size:13px;font-weight:600;padding:9px 15px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--muted);cursor:pointer;transition:all .15s;white-space:nowrap}
+  .chip:hover{border-color:var(--accent);color:var(--accent)}
+  .chip.active{background:var(--ink);border-color:var(--ink);color:#fff}
+  .chip.fav.active{background:#f5b301;border-color:#f5b301;color:#3a2c00}
+
+  main{padding:30px 0 40px}
+  /* цветной блок-раздел */
+  .section{margin-top:18px;border-radius:24px;padding:28px;scroll-margin-top:120px;border:1px solid var(--sec-line);background:var(--sec-bg)}
+  .section-head{display:flex;align-items:center;gap:14px;margin-bottom:20px;flex-wrap:wrap}
+  .sec-emoji{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:23px;background:var(--sec-accent);box-shadow:0 6px 16px var(--sec-glow)}
+  .sec-titles{display:flex;flex-direction:column}
+  .section-title{font-size:22px;font-weight:800;letter-spacing:-.02em}
+  .section-sub{font-size:13.5px;color:var(--muted)}
+  .section-count{margin-left:auto;font-size:13px;font-weight:700;color:#fff;background:var(--sec-accent);padding:5px 13px;border-radius:999px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:13px}
+  .card{position:relative;background:var(--surface);border:1px solid rgba(20,20,30,.06);border-radius:15px;padding:18px;display:flex;flex-direction:column;min-height:148px;transition:transform .16s,box-shadow .16s;cursor:pointer}
+  .card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+  .card-top{display:flex;align-items:center;gap:8px;margin-bottom:8px;padding-right:30px}
+  .card-name{font-size:16.5px;font-weight:700;letter-spacing:-.01em}
+  .medal{font-size:15px}
+  .card-desc{font-size:13.5px;color:var(--muted);line-height:1.45;flex:1}
+  .card-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:13px}
+  .type{font-size:11px;font-weight:700;letter-spacing:.02em;padding:4px 9px;border-radius:7px;text-transform:uppercase;background:var(--sec-accent);color:#fff;opacity:.9}
+  .visit{font-size:12.5px;font-weight:600;color:var(--sec-accent)}
+  .visit:hover{text-decoration:underline}
+  .fav-btn{position:absolute;top:14px;right:14px;width:30px;height:30px;border:none;background:transparent;cursor:pointer;color:var(--faint);display:grid;place-items:center;border-radius:8px;transition:.15s}
+  .fav-btn:hover{background:rgba(0,0,0,.05)}
+  .fav-btn.on{color:#f5b301}
+
+  .empty{text-align:center;padding:80px 20px;color:var(--muted)}
+  .empty b{color:var(--ink);font-size:18px;display:block;margin-bottom:6px}
+
+  .howto{margin-top:22px;background:var(--ink);color:#fff;border-radius:24px;padding:44px}
+  .howto h2{font-size:26px;font-weight:800;letter-spacing:-.02em}
+  .howto .hsub{color:#b9b9c4;margin-top:8px;font-size:15px}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:26px}
+  .step{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:20px}
+  .step .n{width:28px;height:28px;border-radius:8px;background:var(--accent);color:#fff;font-weight:700;display:grid;place-items:center;margin-bottom:12px}
+  .step h3{font-size:15px;font-weight:700;margin-bottom:6px}
+  .step p{font-size:13px;color:#b9b9c4;line-height:1.5}
+
+  footer{padding:40px 0 60px;text-align:center;color:var(--faint);font-size:13px}
+  footer b{color:var(--muted);font-weight:600}
+  @media(max-width:640px){.section{padding:20px}.howto{padding:26px 20px}}
+</style>
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Пособие · Насмотренность</div>
+  <h1>Ресурсы для дизайна экранов, сайтов&nbsp;&amp; UI</h1>
+  <p class="lede">Карта ресурсов — от общего вдохновения до готовых компонентов, анимаций, цвета, шрифтов и инструментов. Для всей команды: дизайн, разработка, маркетинг.</p>
+  <div class="stats">
+    <div class="pill"><div class="num">9</div><div class="lbl">разделов</div></div>
+    <div class="pill"><div class="num">80</div><div class="lbl">ресурсов</div></div>
+    <div class="pill"><div class="num">🥇🥈🥉</div><div class="lbl">подиум в каждом</div></div>
+    <div class="pill"><div class="num">100%</div><div class="lbl">ссылки кликабельны</div></div>
+  </div>
+</div></header>
+
+<div class="controls"><div class="wrap"><div class="controls-row">
+  <div class="search">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+    <input id="q" type="search" placeholder="Поиск по названию или описанию…" autocomplete="off">
+  </div>
+  <div class="filters" id="filters">
+    <button class="chip active" data-type="all">Все</button>
+    <button class="chip" data-type="nasmotr">Насмотренность</button>
+    <button class="chip" data-type="take">Можно брать</button>
+    <button class="chip" data-type="tool">Инструмент</button>
+    <button class="chip" data-type="ref">Справочник</button>
+    <button class="chip fav" data-type="fav">★ Избранное</button>
+  </div>
+</div></div></div>
+
+<main class="wrap">
+  <div id="catalog"></div>
+  <div class="empty" id="empty" style="display:none"><b>Ничего не найдено</b>Попробуй другой запрос или сними фильтры.</div>
+
+  <section class="howto">
+    <h2>🧠 Как реально развить насмотренность</h2>
+    <p class="hsub">Скроллить Dribbble — почти бесполезно. Работает другое.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Собирай в свою доску</h3><p>Заведи коллекцию в Pinterest, Are.na или приложении Eagle / Figma. Сохраняй то, что цепляет — со временем проступит твой вкус.</p></div>
+      <div class="step"><div class="n">2</div><h3>Анализируй, а не любуйся</h3><p>К каждому экрану спрашивай: почему это работает? Иерархия, отступы, контраст, что главное на экране.</p></div>
+      <div class="step"><div class="n">3</div><h3>Повторяй руками</h3><p>Возьми понравившийся экран и пересобери его — в Figma или в коде. Глаз развивается через воспроизведение.</p></div>
+      <div class="step"><div class="n">4</div><h3>Сравнивай 3 решения</h3><p>Одной задачи. Например, три экрана «дашборд привычек» — что лучше и почему.</p></div>
+      <div class="step"><div class="n">5</div><h3>Фундамент</h3><p>Refactoring UI и Laws of UX — короткие практичные правила, которые применяешь сразу.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">Пособие по насмотренности · UI / UX ресурсы<br><b>Ссылки активны — кликай прямо по карточке</b></footer>
+
+<script>
+const SECTIONS = [
+  {id:"s1", emoji:"📱", title:"Реальные экраны приложений", sub:"как делают живые продукты", items:[
+    {n:"Mobbin", m:"gold", t:"nasmotr", u:"https://mobbin.com", d:"Главный кладезь: тысячи реальных скринов iOS, Android и веба по экранам и целым потокам. Фильтры по паттернам — видно, как одну задачу решают разные живые продукты."},
+    {n:"Refero", m:"silver", t:"nasmotr", u:"https://refero.design", d:"Интерфейсы реальных продуктов с поиском по элементам и флоу. Удобно искать прицельно: «как сделан конкретный экран»."},
+    {n:"Page Flows", m:"bronze", t:"nasmotr", u:"https://pageflows.com", d:"Видео-записи пользовательских потоков целиком — онбординг, оплата, отписка. Показывает UX в движении, а не статикой."},
+    {n:"SaaSframe", m:"", t:"nasmotr", u:"https://www.saasframe.io", d:"Экраны и письма реальных SaaS-продуктов. Сильная сторона — дашборды и продуктовые паттерны, а не маркетинг."},
+    {n:"UI Sources", m:"", t:"nasmotr", u:"https://www.uisources.com", d:"Реальные экраны с коротким разбором паттернов и анти-паттернов — не просто красиво, а с пояснением, что и зачем."},
+    {n:"Screenlane", m:"", t:"nasmotr", u:"https://screenlane.com", d:"Свежие подборки экранов и микро-взаимодействий, можно подписаться на рассылку и получать порциями."},
+    {n:"Scrnshts", m:"", t:"nasmotr", u:"https://scrnshts.club", d:"Кураторская коллекция скриншотов из App Store — чистая насмотренность по мобильным экранам."},
+    {n:"Empty States", m:"", t:"nasmotr", u:"https://emptystat.es", d:"Пустые экраны со всего мира — то самое слепое пятно, про которое часто забывают при проектировании."},
+    {n:"Page Collective", m:"", t:"nasmotr", u:"https://www.pagecollective.com", d:"Кураторские скриншоты сайтов и приложений с акцентом именно на продукт, а не на витринную красоту."},
+    {n:"Collect UI", m:"", t:"nasmotr", u:"https://collectui.com", d:"Ежедневные тематические подборки UI. Заходишь за идеей по конкретному элементу — формам, карточкам, пейволам."},
+  ]},
+  {id:"s2", emoji:"🖼", title:"UI-концепты и кейсы", sub:"", items:[
+    {n:"Behance", m:"gold", t:"nasmotr", u:"https://www.behance.net", d:"Полные кейсы с логикой «почему сделали так». Развивает мышление: видишь не только результат, но и путь к нему."},
+    {n:"Dribbble", m:"silver", t:"nasmotr", u:"https://dribbble.com", d:"Витрина концептов: красиво, но часто «нерабочая красота». Бери как источник идей и настроения, не для копирования 1:1."},
+    {n:"Muzli", m:"", t:"nasmotr", u:"https://muz.li", d:"Лента вдохновения на каждый день — ставится расширением в браузер. Фоновая насмотренность без специального захода."},
+  ]},
+  {id:"s3", emoji:"🌐", title:"Сайты и лендинги", sub:"", items:[
+    {n:"Awwwards", m:"gold", t:"nasmotr", u:"https://www.awwwards.com", d:"Передовой веб с сильным моушеном: тренды, смелые анимации и взаимодействия. Сюда — смотреть, куда движется планка."},
+    {n:"Godly", m:"silver", t:"nasmotr", u:"https://godly.website", d:"Вкусная кураторская подборка современного веба — насмотренность по цельным сайтам, а не отдельным блокам."},
+    {n:"Land-book", m:"bronze", t:"nasmotr", u:"https://land-book.com", d:"Большая галерея лендингов на любой вкус. Хорошо листать, когда собираешь структуру своей страницы."},
+    {n:"Landingfolio", m:"", t:"nasmotr", u:"https://www.landingfolio.com", d:"Лендинги плюс готовые секции, которые можно разобрать по кусочкам — герой, отзывы, тарифы."},
+    {n:"One Page Love", m:"", t:"nasmotr", u:"https://onepagelove.com", d:"Коллекция одностраничников. Полезно, когда вся история продукта должна уместиться в один экранный поток."},
+    {n:"Lapa Ninja", m:"", t:"nasmotr", u:"https://www.lapa.ninja", d:"Галерея лендингов с приятным бонусом — бесплатные книги по дизайну в придачу."},
+    {n:"siteInspire", m:"", t:"nasmotr", u:"https://www.siteinspire.com", d:"Строгая кураторская подборка сайтов с хорошим вкусом. Меньше шума, больше выверенных примеров."},
+    {n:"httpster", m:"", t:"nasmotr", u:"https://httpster.net", d:"Свежие, иногда дерзкие сайты. Сюда — за смелыми решениями и нестандартной подачей."},
+  ]},
+  {id:"s4", emoji:"🧩", title:"Компоненты, системы, детали", sub:"код и готовые блоки", items:[
+    {n:"shadcn/ui", m:"gold", t:"take", u:"https://ui.shadcn.com", d:"Аккуратные React-компоненты, которые копируешь прямо в свой код и дальше правишь под себя. Де-факто стандарт последних лет."},
+    {n:"Radix UI", m:"silver", t:"take", u:"https://www.radix-ui.com", d:"Доступные «примитивы» компонентов, на которых построен сам shadcn/ui. Фундамент, если делаешь свою систему."},
+    {n:"Tailwind UI", m:"bronze", t:"take", u:"https://tailwindui.com", d:"Эталонные секции и блоки от создателей Tailwind. Часть бесплатно, остальное по подписке."},
+    {n:"UIverse", m:"", t:"take", u:"https://uiverse.io", d:"Огромная библиотека open-source CSS-компонентов — кнопки, карточки, лоадеры. Копируешь код к себе и используешь."},
+    {n:"HyperUI", m:"", t:"take", u:"https://www.hyperui.dev", d:"Бесплатные готовые блоки на Tailwind — лендинги, формы, таблицы. Берёшь разметку и вставляешь."},
+    {n:"21st.dev", m:"", t:"take", u:"https://21st.dev", d:"Маркетплейс community-компонентов для React и Tailwind — много свежих идей и готовых решений."},
+    {n:"Aceternity UI", m:"", t:"take", u:"https://ui.aceternity.com", d:"Эффектные анимированные секции на React и Framer Motion — когда нужен «вау»-интерфейс почти из коробки."},
+    {n:"Magic UI", m:"", t:"take", u:"https://magicui.design", d:"Анимированные компоненты-конструктор, которые дружат с shadcn/ui и собираются в единый стиль."},
+    {n:"Bento Grids", m:"", t:"nasmotr", u:"https://bentogrids.com", d:"Подборка модных bento-сеток: трендовый способ компоновать разделы плитками разного размера."},
+    {n:"The Component Gallery", m:"", t:"ref", u:"https://component.gallery", d:"Как один и тот же компонент решают в разных дизайн-системах. Отлично, чтобы сверять свой подход с индустрией."},
+    {n:"UI Garage", m:"", t:"nasmotr", u:"https://uigarage.net", d:"Паттерны, разложенные по типам компонентов. Ищешь «как делают тоггл» — находишь десяток вариантов."},
+    {n:"UI Patterns", m:"", t:"ref", u:"https://ui-patterns.com", d:"Каталог UX-паттернов с объяснением, когда какой уместен. Не просто «как», а «почему»."},
+    {n:"Checklist Design", m:"", t:"ref", u:"https://www.checklist.design", d:"Чек-листы «что не забыть» по каждому компоненту и экрану. Возвращаешься перед сдачей макета."},
+    {n:"Calltoidea", m:"", t:"nasmotr", u:"https://www.calltoidea.com", d:"Идеи по конкретным элементам интерфейса — точечно, когда застрял на одной детали."},
+    {n:"Footer.design", m:"", t:"nasmotr", u:"https://www.footer.design", d:"Подборка футеров. Звучит узко, но именно футер часто собирают наспех — здесь есть из чего выбрать."},
+    {n:"Navbar Gallery", m:"", t:"nasmotr", u:"https://www.navbar.gallery", d:"Коллекция навигаций — как вести пользователя по продукту."},
+  ]},
+  {id:"s5", emoji:"🎞", title:"Анимации и моушн", sub:"микро-взаимодействия и эффекты", items:[
+    {n:"LottieFiles", m:"gold", t:"take", u:"https://lottiefiles.com", d:"Готовые лёгкие анимации формата Lottie — встраиваются и в веб, и в мобайл почти без веса. Самый быстрый путь к приятному движению."},
+    {n:"Framer Motion", m:"silver", t:"tool", u:"https://motion.dev", d:"Топовая библиотека анимаций для React и JS с живыми примерами под рукой."},
+    {n:"GSAP", m:"bronze", t:"tool", u:"https://gsap.com", d:"Профессиональная веб-анимация плюс витрина сайтов, где видно её настоящий предел."},
+    {n:"Rive", m:"", t:"tool", u:"https://rive.app", d:"Интерактивные анимации, которые реагируют на действия пользователя. Сложнее Lottie, но и заметно мощнее."},
+    {n:"Codrops", m:"", t:"take", u:"https://tympanus.net/codrops", d:"Креативные веб-эффекты с открытым кодом и разборами. Кладезь нестандартных анимаций, которые можно взять к себе."},
+    {n:"UI Movement", m:"", t:"nasmotr", u:"https://uimovement.com", d:"Галерея именно анимированных интерфейсов — насмотренность по микро-взаимодействиям."},
+    {n:"Animista", m:"", t:"tool", u:"https://animista.net", d:"Конструктор готовых CSS-анимаций: выбрал, настроил, скопировал код."},
+    {n:"Hover.css", m:"", t:"take", u:"https://ianlunn.github.io/Hover", d:"Коллекция hover-эффектов на чистом CSS — копируешь нужный и вставляешь."},
+    {n:"Easings.net", m:"", t:"ref", u:"https://easings.net", d:"Справочник кривых плавности: основа того, почему одна анимация приятная, а другая дёрганая."},
+    {n:"Cubic-bezier", m:"", t:"tool", u:"https://cubic-bezier.com", d:"Интерактивный редактор кривой плавности для CSS — рисуешь кривую и забираешь значения."},
+  ]},
+  {id:"s6", emoji:"🎨", title:"Цвет, типографика и доступность", sub:"", items:[
+    {n:"Realtime Colors", m:"gold", t:"tool", u:"https://www.realtimecolors.com", d:"Примеряешь палитру и шрифты на живой макет в реальном времени — сразу видно, как цвета работают в деле, а не на квадратиках."},
+    {n:"Google Fonts", m:"silver", t:"take", u:"https://fonts.google.com", d:"Огромная библиотека бесплатных шрифтов, де-факто стандарт. Подключаешь в пару строк и в дизайн, и в код."},
+    {n:"Coolors", m:"bronze", t:"tool", u:"https://coolors.co", d:"Самый быстрый способ накидать палитру: жмёшь пробел, пока комбинация не зацепит, фиксируешь цвет и крутишь остальные вокруг него."},
+    {n:"Adobe Color", m:"", t:"tool", u:"https://color.adobe.com", d:"Цветовое колесо с правилами гармонии и извлечением палитры прямо из фотографии."},
+    {n:"Color Hunt", m:"", t:"take", u:"https://colorhunt.co", d:"Лента готовых гамм, собранных сообществом. Берёшь то, что уже выглядит согласованно, и копируешь."},
+    {n:"Khroma", m:"", t:"tool", u:"https://www.khroma.co", d:"Сначала отмечаешь нравящиеся цвета — дальше ИИ подстраивается под твой вкус и предлагает палитры, которые ощущаются «твоими»."},
+    {n:"WebAIM Contrast Checker", m:"", t:"tool", u:"https://webaim.org/resources/contrastchecker", d:"Проверка контраста текста и фона по нормам доступности — обязательная гигиена перед сдачей."},
+    {n:"Who Can Use", m:"", t:"tool", u:"https://www.whocanuse.com", d:"Показывает, как твою пару цветов видят люди с разными типами зрения. Отрезвляет."},
+    {n:"Typewolf", m:"", t:"nasmotr", u:"https://www.typewolf.com", d:"Витрина шрифтовых пар и живых примеров в вебе: что с чем сочетается и как это выглядит в реальной вёрстке."},
+    {n:"Fonts In Use", m:"", t:"nasmotr", u:"https://fontsinuse.com", d:"Каталог реальных проектов с разбором применённых шрифтов. Видно, как гарнитура ведёт себя в деле."},
+    {n:"Fontshare", m:"", t:"take", u:"https://www.fontshare.com", d:"Качественные бесплатные шрифты, которые можно использовать в коммерции без головной боли с лицензией."},
+  ]},
+  {id:"s7", emoji:"✏️", title:"Иконки, иллюстрации, фото", sub:"ассеты под свой стиль", items:[
+    {n:"Lucide", m:"gold", t:"take", u:"https://lucide.dev", d:"Чистый open-source набор иконок (форк Feather) — лёгкий, ровный, ставится в любой современный стек."},
+    {n:"Unsplash", m:"silver", t:"take", u:"https://unsplash.com", d:"Бесплатные качественные фотографии, можно использовать в коммерции. Базовый источник фото."},
+    {n:"unDraw", m:"bronze", t:"take", u:"https://undraw.co", d:"Большая библиотека бесплатных иллюстраций, которые перекрашиваются под один акцентный цвет в клик."},
+    {n:"Heroicons", m:"", t:"take", u:"https://heroicons.com", d:"Иконки от создателей Tailwind — идеально ложатся к shadcn/ui и Tailwind-проектам."},
+    {n:"Tabler Icons", m:"", t:"take", u:"https://tabler.io/icons", d:"3000+ ровных open-source иконок одного стиля, полностью бесплатно."},
+    {n:"Phosphor Icons", m:"", t:"take", u:"https://phosphoricons.com", d:"Большой гибкий набор иконок с разными весами — от тонких до жирных, под любую плотность интерфейса."},
+    {n:"Iconify", m:"", t:"take", u:"https://iconify.design", d:"Агрегатор почти всех наборов иконок сразу — ищешь в одном месте, забираешь в любом формате."},
+    {n:"IconScout", m:"", t:"take", u:"https://iconscout.com", d:"Иконки, стикеры и 3D в одном месте. Удобно держать визуальный стиль из единого набора."},
+    {n:"Iconfinder", m:"", t:"take", u:"https://www.iconfinder.com", d:"Огромная база иконок на любой запрос — когда нужен конкретный значок здесь и сейчас."},
+    {n:"Storyset", m:"", t:"take", u:"https://storyset.com", d:"Настраиваемые иллюстрации — меняешь цвет под свою палитру и даже добавляешь анимацию, потом скачиваешь."},
+    {n:"Blush", m:"", t:"take", u:"https://blush.design", d:"Конструктор иллюстраций: собираешь сцену из частей под свою задачу, а не ищешь готовую."},
+    {n:"Open Peeps", m:"", t:"take", u:"https://www.openpeeps.com", d:"Рисованные персонажи-конструктор — миксуешь позы, эмоции и детали, чтобы получить своих героев."},
+    {n:"Humaaans", m:"", t:"take", u:"https://www.humaaans.com", d:"Микс-н-матч человечки для сцен: комбинируешь тела, позы и одежду под нужный сюжет."},
+    {n:"Pexels", m:"", t:"take", u:"https://www.pexels.com", d:"Бесплатные фото и короткие видео — хорошая альтернатива и дополнение к Unsplash."},
+  ]},
+  {id:"s8", emoji:"🛠", title:"Инструменты и прототипы", sub:"в чём работаешь", items:[
+    {n:"Figma", m:"gold", t:"tool", u:"https://www.figma.com", d:"Главный инструмент дизайна и прототипа: макеты, компоненты, совместная работа и огромное community с бесплатными файлами."},
+    {n:"Excalidraw", m:"silver", t:"tool", u:"https://excalidraw.com", d:"Мгновенные наброски экранов и пользовательских потоков «от руки». Бесплатно, открываешь и сразу рисуешь."},
+    {n:"Canva", m:"bronze", t:"tool", u:"https://www.canva.com", d:"Быстрый редактор графики, презентаций и соцсетей по шаблонам — когда нужно сделать красиво и без Figma."},
+    {n:"Spline", m:"", t:"tool", u:"https://spline.design", d:"3D прямо в браузере: сцены, объекты и интерактив для современных «вкусных» интерфейсов."},
+  ]},
+  {id:"s9", emoji:"📚", title:"Основы и гайдлайны", sub:"на что ссылаются все", items:[
+    {n:"Nielsen Norman Group", m:"gold", t:"ref", u:"https://www.nngroup.com", d:"Лучшие в мире статьи и исследования по UX, без воды. Сюда — за доказательным «как правильно»."},
+    {n:"Apple Human Interface Guidelines", m:"silver", t:"ref", u:"https://developer.apple.com/design", d:"Эталонный справочник по интерфейсам Apple — нормы, отступы, поведение элементов. Полезно даже вне iOS."},
+    {n:"Material Design 3", m:"bronze", t:"ref", u:"https://m3.material.io", d:"Дизайн-система Google: принципы, компоненты и токены для Android и веба."},
+    {n:"Smashing Magazine", m:"", t:"ref", u:"https://www.smashingmagazine.com", d:"Глубокие практические статьи по дизайну и фронтенду — когда нужно разобраться в теме всерьёз."},
+  ]},
+];
+
+// палитра по разделам: bg (очень светлый), line, accent, glow
+const PALETTE = {
+  s1:{bg:"#f0f1ff",line:"#e1e3fb",accent:"#5b5bd6",glow:"rgba(91,91,214,.28)"},
+  s2:{bg:"#fff0f6",line:"#fbdfeb",accent:"#d6398b",glow:"rgba(214,57,139,.26)"},
+  s3:{bg:"#ecfbfb",line:"#d3f0f0",accent:"#0d9aa8",glow:"rgba(13,154,168,.26)"},
+  s4:{bg:"#f6f0ff",line:"#e8ddfb",accent:"#7c3aed",glow:"rgba(124,58,237,.26)"},
+  s5:{bg:"#fff6ec",line:"#fbe6cf",accent:"#d97706",glow:"rgba(217,119,6,.26)"},
+  s6:{bg:"#fff0f0",line:"#fbdddd",accent:"#e11d48",glow:"rgba(225,29,72,.24)"},
+  s7:{bg:"#edfbf3",line:"#d2f0e0",accent:"#0a9d63",glow:"rgba(10,157,99,.24)"},
+  s8:{bg:"#eef4ff",line:"#dce8fb",accent:"#2563eb",glow:"rgba(37,99,235,.26)"},
+  s9:{bg:"#f3f4f6",line:"#e3e5ea",accent:"#475569",glow:"rgba(71,85,105,.22)"},
+};
+const TYPE_LABEL={nasmotr:"Насмотренность",take:"Можно брать",tool:"Инструмент",ref:"Справочник"};
+const MEDAL={gold:"🥇",silver:"🥈",bronze:"🥉"};
+
+let activeType="all", query="";
+const FAV_KEY="nasmotr_favs";
+let favs=new Set(JSON.parse(localStorage.getItem(FAV_KEY)||"[]"));
+const saveFavs=()=>localStorage.setItem(FAV_KEY,JSON.stringify([...favs]));
+
+const catalog=document.getElementById("catalog"), emptyEl=document.getElementById("empty");
+function matches(it){
+  if(activeType==="fav"){if(!favs.has(it.u))return false;}
+  else if(activeType!=="all"){if(it.t!==activeType)return false;}
+  if(query){if(!(it.n+" "+it.d).toLowerCase().includes(query))return false;}
+  return true;
+}
+function render(){
+  catalog.innerHTML=""; let total=0;
+  SECTIONS.forEach(s=>{
+    const vis=s.items.filter(matches); if(!vis.length)return; total+=vis.length;
+    const p=PALETTE[s.id];
+    const sec=document.createElement("section");
+    sec.className="section"; sec.id=s.id;
+    sec.style.cssText=`--sec-bg:${p.bg};--sec-line:${p.line};--sec-accent:${p.accent};--sec-glow:${p.glow}`;
+    sec.innerHTML=`<div class="section-head">
+        <div class="sec-emoji">${s.emoji}</div>
+        <div class="sec-titles"><span class="section-title">${s.title}</span>${s.sub?`<span class="section-sub">${s.sub}</span>`:""}</div>
+        <span class="section-count">${vis.length}</span>
+      </div>`;
+    const grid=document.createElement("div"); grid.className="grid";
+    vis.forEach(it=>{
+      const on=favs.has(it.u);
+      const card=document.createElement("article"); card.className="card";
+      card.innerHTML=`
+        <button class="fav-btn ${on?'on':''}" data-u="${it.u}" title="В избранное">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="${on?'currentColor':'none'}" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
+        </button>
+        <div class="card-top"><span class="card-name">${it.n}</span>${it.m?`<span class="medal">${MEDAL[it.m]}</span>`:""}</div>
+        <p class="card-desc">${it.d}</p>
+        <div class="card-foot"><span class="type">${TYPE_LABEL[it.t]}</span><a class="visit" href="${it.u}" target="_blank" rel="noopener">${it.u.replace(/^https?:\/\//,'')} ↗</a></div>`;
+      card.addEventListener("click",e=>{if(e.target.closest(".fav-btn")||e.target.closest("a"))return;window.open(it.u,"_blank","noopener");});
+      grid.appendChild(card);
+    });
+    sec.appendChild(grid); catalog.appendChild(sec);
+  });
+  emptyEl.style.display=total?"none":"block";
+}
+document.getElementById("filters").addEventListener("click",e=>{
+  const b=e.target.closest(".chip"); if(!b)return;
+  document.querySelectorAll("#filters .chip").forEach(c=>c.classList.remove("active"));
+  b.classList.add("active"); activeType=b.dataset.type; render();
+});
+document.getElementById("q").addEventListener("input",e=>{query=e.target.value.trim().toLowerCase();render();});
+catalog.addEventListener("click",e=>{
+  const fb=e.target.closest(".fav-btn"); if(!fb)return; e.stopPropagation();
+  const u=fb.dataset.u; favs.has(u)?favs.delete(u):favs.add(u); saveFavs(); render();
+});
+render();
+</script>
+</body>
+</html>
