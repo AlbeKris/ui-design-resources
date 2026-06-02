@@ -4,8 +4,8 @@
 
 ## Открыть онлайн
 
-- **Основной вариант:** https://albekris.github.io/nasmotrennost/
-- **Альтернативный макет (цветные секции):** https://albekris.github.io/nasmotrennost/variant-2/
+- **Основной вариант:** https://albekris.github.io/ui-design-resources/
+- **Альтернативный макет (цветные секции):** https://albekris.github.io/ui-design-resources/variant-2/
 
 ## Функции
 
