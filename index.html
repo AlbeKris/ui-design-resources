@@ -96,6 +96,18 @@
   .empty{text-align:center;padding:80px 20px;color:var(--muted)}
   .empty b{color:var(--ink);font-size:18px;display:block;margin-bottom:6px}
 
+  /* ── AI workflow ── */
+  .aiblock{margin-top:60px}
+  .aiblock h2{font-size:26px;font-weight:800;letter-spacing:-.02em}
+  .aiblock .asub{color:var(--muted);margin-top:10px;font-size:15px;max-width:74ch}
+  .ai-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:14px;margin-top:26px}
+  .ai-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column}
+  .ai-card .type{align-self:flex-start;margin-bottom:16px}
+  .ai-card ol{list-style:none;counter-reset:step;display:flex;flex-direction:column;gap:13px}
+  .ai-card li{counter-increment:step;position:relative;padding-left:34px;font-size:13.5px;color:var(--muted);line-height:1.46}
+  .ai-card li::before{content:counter(step);position:absolute;left:0;top:1px;width:23px;height:23px;border-radius:7px;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:12px;display:grid;place-items:center}
+  .ai-card li b{color:var(--ink);font-weight:600}
+
   /* ── How-to ── */
   .howto{margin-top:60px;background:var(--ink);color:#fff;border-radius:24px;padding:44px}
   .howto h2{font-size:26px;font-weight:800;letter-spacing:-.02em}
@@ -161,6 +173,49 @@
 <main class="wrap">
   <div id="catalog"></div>
   <div class="empty" id="empty" style="display:none"><b>Ничего не найдено</b>Попробуй другой запрос или сними фильтры.</div>
+
+  <section class="aiblock">
+    <h2>🤖 Как применять ресурсы в разработке с ИИ</h2>
+    <p class="asub">Ресурсы выше — это не только насмотренность. Каждый тип можно подключить к работе с ИИ-ассистентом вроде Claude Code. Вот пошаговый чек-лист по каждой категории.</p>
+    <div class="ai-grid">
+      <div class="ai-card">
+        <span class="type nasmotr">Референсы</span>
+        <ol>
+          <li>Найди на Mobbin или Behance экран, близкий к задаче, и сделай <b>скриншот</b>.</li>
+          <li>Брось скриншот в Claude Code — он <b>читает изображения</b> — и попроси разобрать структуру: сетка, иерархия, отступы.</li>
+          <li>Скажи, что повторить (композицию), а что заменить на свой контент.</li>
+          <li>Попроси сверстать экран на твоём стеке (например React + Tailwind) и правь по блокам.</li>
+        </ol>
+      </div>
+      <div class="ai-card">
+        <span class="type take">Можно использовать</span>
+        <ol>
+          <li>Выбери готовый компонент или ассет — например компонент с shadcn/ui или иконки Lucide.</li>
+          <li>Скопируй <b>команду установки</b> или код.</li>
+          <li>Попроси Claude Code установить библиотеку и добавить компонент в проект.</li>
+          <li>Уточни, куда встроить и какие пропсы и стили подогнать под макет.</li>
+        </ol>
+      </div>
+      <div class="ai-card">
+        <span class="type tool">Сервис</span>
+        <ol>
+          <li>Подбери параметры: палитру в Coolors, шрифтовую пару, кривую в Cubic-bezier.</li>
+          <li>Скопируй готовые значения — <b>HEX-коды, CSS-переменные, cubic-bezier(…)</b>.</li>
+          <li>Отдай их Claude Code: «заведи это как дизайн-токены / CSS-переменные».</li>
+          <li>Попроси применить токены по компонентам, чтобы стиль был единым.</li>
+        </ol>
+      </div>
+      <div class="ai-card">
+        <span class="type ref">Гайды</span>
+        <ol>
+          <li>Найди подходящее правило или чек-лист — например чек-лист по формам на Checklist Design.</li>
+          <li>Скопируй ключевые пункты или дай <b>ссылку</b>.</li>
+          <li>Попроси Claude Code проверить твой компонент по этому чек-листу.</li>
+          <li>Прими правки по доступности, состояниям и краевым случаям.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
 
   <section class="howto">
     <h2>🧠 Как реально развить насмотренность</h2>
