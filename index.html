@@ -40,6 +40,9 @@
   /* ── Legend ── */
   .legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:26px;font-size:13px;color:var(--muted)}
   .legend b{color:var(--ink);font-weight:600}
+  .type-legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:11px 26px;margin-top:18px;max-width:780px}
+  .type-legend .tl{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--muted)}
+  .type-legend .type{flex-shrink:0}
 
   /* ── Sticky controls ── */
   .controls{position:sticky;top:0;z-index:50;background:rgba(251,251,250,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:14px 0}
@@ -126,6 +129,12 @@
       <span>🥈 <b>сильный выбор</b></span>
       <span>🥉 <b>тоже топ</b></span>
     </div>
+    <div class="type-legend">
+      <span class="tl"><span class="type nasmotr">Референсы</span> смотришь и берёшь идеи</span>
+      <span class="tl"><span class="type take">Можно использовать</span> скачать или скопировать к себе</span>
+      <span class="tl"><span class="type tool">Сервис</span> генератор, редактор или библиотека</span>
+      <span class="tl"><span class="type ref">Гайды</span> правила, гайдлайны и чек-листы</span>
+    </div>
   </div>
 </header>
 
@@ -138,10 +147,10 @@
       </div>
       <div class="filters" id="filters">
         <button class="chip active" data-type="all">Все</button>
-        <button class="chip" data-type="nasmotr">Насмотренность</button>
-        <button class="chip" data-type="take">Можно брать</button>
-        <button class="chip" data-type="tool">Инструмент</button>
-        <button class="chip" data-type="ref">Справочник</button>
+        <button class="chip" data-type="nasmotr">Референсы</button>
+        <button class="chip" data-type="take">Можно использовать</button>
+        <button class="chip" data-type="tool">Сервис</button>
+        <button class="chip" data-type="ref">Гайды</button>
         <button class="chip fav" data-type="fav">★ Избранное</button>
       </div>
     </div>
@@ -273,7 +282,7 @@ const SECTIONS = [
   ]},
 ];
 
-const TYPE_LABEL = {nasmotr:"Насмотренность", take:"Можно брать", tool:"Инструмент", ref:"Справочник"};
+const TYPE_LABEL = {nasmotr:"Референсы", take:"Можно использовать", tool:"Сервис", ref:"Гайды"};
 const MEDAL = {gold:"🥇", silver:"🥈", bronze:"🥉"};
 
 // ── state ──
