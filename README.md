@@ -4,8 +4,7 @@
 
 ## Открыть онлайн
 
-- **Основной вариант:** https://albekris.github.io/ui-design-resources/
-- **Альтернативный макет (цветные секции):** https://albekris.github.io/ui-design-resources/variant-2/
+https://albekris.github.io/ui-design-resources/
 
 ## Функции
 
@@ -16,7 +15,6 @@
 
 ## Структура
 
-- `index.html` — основной сайт-каталог (светлый минимализм)
-- `variant-2/index.html` — альтернативный макет с цветовым кодированием разделов
+- `index.html` — сайт-каталог (светлый минимализм), всё в одном файле
 
 Сайт статический, без сборки — открывается двойным кликом и работает на GitHub Pages.
